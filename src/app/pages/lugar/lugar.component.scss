@@ -1,0 +1,301 @@
+@import 'mixins';
+
+.weather{
+    position: relative;
+    color: white;
+    min-height: 100vh;
+    font-family: 'Montserrat', sans-serif;
+    overflow: hidden;
+    &__background{
+        position: absolute;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        filter: blur(.4rem);
+        box-shadow: 0px -2px 2px rgba(34,34,34,0.6);
+        transform: scale(1.2);
+        @media screen and (max-width: 1200px){
+            height: 100%;
+        }
+    }
+    &__wrapper{
+        position: relative;
+        z-index: 2;
+        width: 90%;
+        max-width: 2200px;
+        margin: auto;
+    }
+    &__header{
+        width: 100%;
+        height: 15vh;
+        @include flex(row,nowrap, space-between, center);
+        @media screen and (max-width: 1200px){
+            height: 10vh;
+        }
+    }
+    &__saludo{
+        font-size: 2rem;
+        @media screen and (max-width: 1200px){
+            font-size: 1.3rem;
+        }
+    }
+    &__image{
+        position: relative;
+        width: 100%;
+        height: 35vh;
+        border-radius: 24px;
+        @media screen and (max-width: 1200px){
+            height: 28vh;
+        }
+        @media screen and (max-width: 500px){
+            height: 35vh;
+        }
+    }
+    &__img{
+        width: 100%;
+        height: 100%;
+        border-radius: 24px;
+        @media screen and (max-width: 1400px){
+            filter: brightness(.9);
+        }
+    }
+    &__data{
+        width: 100%;
+        position: absolute;
+        top: 38%;
+        padding: 0 3.5rem;
+        @include flex(row,nowrap, space-between, flex-end);
+        @media screen and (max-width: 800px){
+            padding: 0 2rem;
+        }
+        @media screen and (max-width: 500px){
+            top: 28%;
+            padding: 0 2rem;
+            @include flex(column,nowrap, center, center);
+        }
+    }
+    &__basic{
+        @include flex(column,nowrap, flex-start, flex-start);
+        @media screen and (max-width: 500px){
+            @include flex(column,nowrap, center, center);  
+        }
+    }
+    &__temp-actual{
+        font-size: 4.5rem;
+        font-weight: 600;
+        @media screen and (max-width: 1200px){
+            font-size: 3rem;
+        }
+    }
+    &__location, &__day{
+        font-size: 1.5rem;
+        padding-top: 1rem;
+        @media screen and (max-width: 800px){
+            font-size: 1.1rem;
+        }
+        @media screen and (max-width: 500px){
+            padding: 0;
+        }
+    }
+    &__day{
+        text-align: right;
+        @media screen and (max-width: 500px){
+            font-size: 1.1rem;
+        }
+    }
+    &__location{
+        @media screen and (max-width: 800px){
+            padding-right: 1rem;
+        }
+        @media screen and (max-width: 500px){
+            font-size: 1.1rem;
+            margin-top: .5rem;
+            text-align: center;
+        }
+    }
+    &__time{
+        @include flex(column,nowrap, flex-end, flex-end);
+        @media screen and (max-width: 500px){
+            @include flex(row, nowrap, center, center);
+            margin-top: 2rem;
+        }
+    }
+    &__hour{
+        font-size: 2rem;
+        font-weight: 600;
+        @media screen and (max-width: 800px){
+            font-size: 1.5rem;
+        }
+        @media screen and (max-width: 500px){
+            font-size: 1.5rem;
+            margin-right: 1rem;
+        }
+    }
+    &__info{
+        @include flex(row, nowrap, flex-start, center);
+        height: 50vh;
+        @media screen and (max-width: 1200px){
+            height: auto;
+            flex-direction: column;
+        }
+    }
+    &__cards{
+        width: 45%;
+        height: 50vh;
+        margin: 0 1.5rem 0 0;
+        @include flex(column, nowrap, center, center);
+        @media screen and (max-width: 1200px){
+            width: 100%;
+            height: 30vh;
+            margin: 2.5rem 0;
+        }
+        @media screen and (max-width: 500px){
+            height: 112vh;
+        }
+    }
+    &__top-cards{
+        width: 100%; 
+        height: 23vh;
+        @include flex(row, nowrap, space-between, center);
+        @media screen and (max-width: 500px){
+            height: 100%;
+            flex-direction: column;
+        }
+    }
+    &__card{
+        position: relative;
+        width: 31.5%;
+        height: 100%;
+        background-color: #37373740;
+        border: 3px solid #c4c4c440;
+        border-radius: 24px;
+        @include flex(row,nowrap, center, center);
+        @media screen and (max-width: 500px){
+            width: 100%;
+            margin-bottom: 1rem;
+        }
+    }
+    &__svg{
+        @include flex(row,nowrap, flex-start, center);
+        position: absolute;
+        top: 1rem;
+        left: 1.2rem;
+        @media screen and (max-width: 800px){
+            left: .7rem;
+        }
+        @media screen and (max-width: 500px){
+            left: 1.3rem;
+        }
+    }
+    &__svg-span{
+        margin-left: .5rem;
+        font-size: .9rem;
+        @media screen and (max-width: 800px){
+            margin-left: .2rem;
+            font-size: .8rem;
+        }
+        @media screen and (max-width: 500px){
+            font-size: 1.2rem;
+            margin-left: .5rem;
+        }
+    }
+    &__card-info{
+        padding-top: 1rem;
+        @include flex(column, nowrap, center, center);
+    }
+    &__card-data{
+        font-size: 2.5rem;
+        font-weight: 700;
+        @media screen and (max-width: 800px){
+            font-size: 2rem;
+        }
+        @media screen and (max-width: 500px){
+            font-size: 3rem;
+        }
+    }
+    &__card-medida{
+        @media screen and (max-width: 800px){
+            font-size: .9rem;
+        }
+        @media screen and (max-width: 500px){
+            font-size: 1.3rem;
+        }
+    }
+    &__bottom-card{
+        width: 100%;
+        height: 15vh;
+        margin-top: 1rem;
+        background-color: #37373740;
+        border: 3px solid #c4c4c440;
+        border-radius: 24px;
+        padding: 0 2rem;
+        @include flex(row, nowrap, flex-start, center);
+        @media screen and (max-width: 1200px){
+            height: 14vh;
+        }
+        @media screen and (max-width: 500px){
+            height: 20vh;
+        }
+    }
+    &__description{
+        font-size: 1.4rem;
+    }
+    &__next{
+        width: 55%;
+        height: calc(38vh + 1rem);
+        background-color: #37373740;
+        border: 3px solid #c4c4c440;
+        border-radius: 24px;
+        @include flex(row, nowrap, center, center);
+        @media screen and (max-width: 1200px){
+            width: 100%;
+            padding: 2.5rem 0;
+            height: auto;
+            margin-bottom: 3rem;
+        }
+    }
+    &__ul{
+        width: 85%;
+        @include flex(row, nowrap,space-between, center);
+        @media screen and (max-width: 500px){
+            flex-direction: column;
+        }
+    }
+    &__li{
+        @include flex(column, nowrap, center, center);
+        @media screen and (max-width: 500px){
+            &:not(:last-child){
+                margin-bottom: 4rem;
+            }
+        }
+    }
+    &__dia{
+        font-size: 1.5rem;
+        font-weight: 700;
+        @media screen and (max-width: 1200px){
+            font-size: 1.2rem;  
+        }
+        @media screen and (max-width: 500px){
+            font-size: 1.6rem;
+        }
+    }
+    &__temp{
+        font-size: 1.25rem;
+        @media screen and (max-width: 800px){
+            font-size: .9rem;  
+        }
+        @media screen and (max-width: 500px){
+            font-size: 1.3rem;
+        }
+    }
+    &__prox-img{
+        width: 100%;
+        margin: 2rem 0;
+        @media screen and (max-width: 1600px){
+            width: 80%;
+        }
+        @media screen and (max-width: 500px){
+            width: 100%;
+        }
+    }
+}

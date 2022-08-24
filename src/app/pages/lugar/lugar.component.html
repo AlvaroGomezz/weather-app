@@ -1,0 +1,101 @@
+<div class="weather">
+    <img [src]="imagen" alt="Imagen cielo" class="weather__background">
+    <div class="weather__wrapper">
+        <header class="weather__header">
+            <div class="weather__title">
+                <h2 *ngIf="diaNoche === 'dia'"   class="weather__saludo">¡Buenos días!</h2>
+                <h2 *ngIf="diaNoche === 'tarde'" class="weather__saludo">¡Buenas tardes!</h2>
+                <h2 *ngIf="diaNoche === 'noche'" class="weather__saludo">¡Buenas noches!</h2>
+            </div>
+            <app-buscador></app-buscador>
+        </header>
+        <section class="weather__image">
+            <img [src]="imagen" alt="Imagen cielo" class="weather__img">
+            <div class="weather__data">
+                <div class="weather__basic">
+                    <span class="weather__temp-actual">{{weatherData.temperaturaActual}}º</span>
+                    <span class="weather__location">{{weatherData.municipio}}, {{weatherData.provincia}}</span>
+                </div>
+                <div class="weather__time">
+                    <span class="weather__hour">{{hora}}:{{minuto}}</span>
+                    <span class="weather__day">{{diaSemana}} {{diaMes}} de {{mes}}</span>
+                </div>
+            </div>
+        </section>
+        <section class="weather__info">
+            <div class="weather__cards">
+                <div class="weather__top-cards">
+                    <div class="weather__card">
+                        <div class="weather__svg">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M12.1406 18.0281C12.2829 18.4141 12.5282 18.7536 12.8499 19.0099C13.1716 19.2661 13.5574 19.4293 13.9653 19.4817C14.3733 19.5341 14.7878 19.4736 15.1638 19.3069C15.5398 19.1402 15.8629 18.8736 16.098 18.5361C16.3331 18.1986 16.4712 17.8031 16.4973 17.3926C16.5233 16.9821 16.4364 16.5724 16.2459 16.2078C16.0554 15.8433 15.7686 15.538 15.4167 15.325C15.0648 15.1121 14.6613 14.9997 14.25 15H3.75" stroke="#F3F3F3" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M9.14062 5.97188C9.28287 5.58595 9.52817 5.2464 9.84988 4.99013C10.1716 4.73386 10.5574 4.57067 10.9653 4.51831C11.3733 4.46595 11.7878 4.52641 12.1638 4.69313C12.5398 4.85985 12.8629 5.12644 13.098 5.46393C13.3331 5.80143 13.4712 6.1969 13.4973 6.60738C13.5233 7.01786 13.4364 7.42763 13.2459 7.79215C13.0554 8.15668 12.7686 8.46201 12.4167 8.67496C12.0648 8.88791 11.6613 9.00033 11.25 9H2.25" stroke="#F3F3F3" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M17.3906 8.97188C17.5329 8.58595 17.7782 8.2464 18.0999 7.99013C18.4216 7.73386 18.8074 7.57067 19.2153 7.51831C19.6233 7.46595 20.0378 7.52641 20.4138 7.69313C20.7898 7.85985 21.1129 8.12644 21.348 8.46393C21.5831 8.80143 21.7212 9.1969 21.7473 9.60738C21.7733 10.0179 21.6864 10.4276 21.4959 10.7922C21.3054 11.1567 21.0186 11.462 20.6667 11.675C20.3148 11.8879 19.9113 12.0003 19.5 12H3" stroke="#F3F3F3" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span class="weather__svg-span">VIENTO</span>
+                        </div>
+                        <div class="weather__card-info">
+                            <span class="weather__card-data">{{weatherData.viento}}</span>
+                            <span class="weather__card-medida">km/h</span>
+                        </div>
+                    </div>
+                    <div class="weather__card">
+                        <div class="weather__svg">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
+                                <path d="M20.2373 14.2197C20.2373 7.46973 12.7373 2.21973 12.7373 2.21973C12.7373 2.21973 5.2373 7.46973 5.2373 14.2197C5.2373 16.2089 6.02748 18.1165 7.434 19.523C8.84053 20.9296 10.7482 21.7197 12.7373 21.7197C14.7264 21.7197 16.6341 20.9296 18.0406 19.523C19.4471 18.1165 20.2373 16.2089 20.2373 14.2197Z" stroke="#F3F3F3" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M13.4971 18.6446C14.4137 18.4892 15.2596 18.0532 15.9178 17.3966C16.5761 16.74 17.0143 15.8953 17.1721 14.979" stroke="#F3F3F3" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span class="weather__svg-span">HUMEDAD</span>
+                        </div>
+                        <div class="weather__card-info">
+                            <span class="weather__card-data">{{weatherData.humedad}}</span>
+                            <span class="weather__card-medida">%</span>
+                        </div>
+                    </div>
+                    <div class="weather__card">
+                        <div class="weather__svg">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M8.70234 5.53125L7.98047 3.79688" stroke="#F3F3F3" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M4.03125 10.2001L2.29688 9.47827" stroke="#F3F3F3" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M19.9688 10.2001L21.7031 9.47827" stroke="#F3F3F3" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M15.2988 5.53125L16.0207 3.79688" stroke="#F3F3F3" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M22.5 15H1.5" stroke="#F3F3F3" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M19.5 18.75H4.5" stroke="#F3F3F3" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M6.58125 15C6.3485 14.1643 6.31218 13.2861 6.47514 12.4341C6.63809 11.582 6.99591 10.7792 7.5206 10.0884C8.0453 9.39762 8.72266 8.83753 9.49973 8.45195C10.2768 8.06636 11.1325 7.86572 12 7.86572C12.8675 7.86572 13.7232 8.06636 14.5003 8.45195C15.2773 8.83753 15.9547 9.39762 16.4794 10.0884C17.0041 10.7792 17.3619 11.582 17.5249 12.4341C17.6878 13.2861 17.6515 14.1643 17.4188 15" stroke="#F3F3F3" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span class="weather__svg-span">ATARDECER</span>
+                        </div>
+                        <span class="weather__card-data">{{weatherData.ocaso}}</span>
+                    </div>
+                </div>
+                <div class="weather__bottom-card">
+                    <span class="weather__description">{{weatherData.descripcion}}</span>
+                </div>
+            </div>
+            <div class="weather__next">
+                <ul class="weather__ul">
+                    <li class="weather__li">
+                        <span class="weather__dia">Hoy</span>
+                        <img [src]="iconoHoy" alt="Hoy" class="weather__prox-img">
+                        <div class="weather__temperatures">
+                            <span class="weather__temp">{{weatherData.temperaturaMin}}</span>
+                            <span class="weather__temp"> - </span>
+                            <span class="weather__temp">{{weatherData.temperaturaMax}}º</span>
+                        </div>
+                    </li>
+                    <li 
+                        *ngFor="let dias of weatherProxDias"
+                        class="weather__li">
+                        <span class="weather__dia">{{dias.fecha}}</span>
+                        <img [src]="dias.icono" alt="Prox dias" class="weather__prox-img">
+                        <div class="weather__temperatures">
+                            <span class="weather__temp">{{dias.temperaturaMin}}</span>
+                            <span class="weather__temp"> - </span>
+                            <span class="weather__temp">{{dias.temperaturaMax}}º</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </div>
+</div>

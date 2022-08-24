@@ -1,0 +1,69 @@
+@import 'mixins';
+.buscador{
+    &__form{
+        width: 22rem;
+        @include flex(row, nowrap, space-between, center);
+        padding: .5rem 0;
+        border-bottom: 2px solid #f3f3f3;
+        @media screen and (max-width: 1200px){
+            width: 16rem;
+        }
+        @media screen and (max-width: 800px){
+            width: 13rem;
+        }
+        @media screen and (max-width: 500px){
+            width: 10rem;
+        }
+    }
+    &__svg{
+        @media screen and (max-width: 800px){
+            display: none;
+        }
+    }
+    &__input{
+        outline: none;
+        &::placeholder{
+            color: #f3f3f3;
+        }
+        @media screen and (max-width: 800px){
+            font-size: .9rem;
+        }
+        @media screen and (max-width: 500px){
+            font-size: .8rem;
+        }
+    }
+    &__ul{
+        position: absolute;
+        z-index: 10;
+        display: none;
+        max-height: 90vh;
+        overflow: hidden;
+        &.activo{
+            display: block;
+        }
+    }
+    &__li{
+        background: #252e39;
+        padding: .875rem 1.5rem .875rem 1.5rem;
+        width: 14.7rem; 
+        &:hover{
+            background: #415062;
+        }
+        @media screen and (max-width: 800px){
+            width: 13rem;
+            font-size: .9rem;
+        }
+        @media screen and (max-width: 500px){
+            width: 10rem;
+            font-size: .8rem;
+            padding: 0.875rem 0.5rem 0.875rem 0.5rem;
+        }
+    } 
+    &__li:not(:last-child){
+        border-bottom: 1px solid #323e4c;
+    }
+    &__btn{
+        text-align: left;
+        cursor: pointer;
+    }
+}
