@@ -20,7 +20,9 @@ export class BuscadorComponent implements OnInit {
   ){}
 
   ngOnInit(): void {
-    this.weather.getMunicipios().subscribe((data : any) => this.municipios = data.municipios)
+    this.weather.getMunicipios().subscribe((data : any) => {
+      this.municipios = data
+    })
   }
   setActivo(param : boolean) : void{
     this.activo = param

@@ -25,14 +25,14 @@ export class LugarComponent implements OnInit {
   }
   /* Creamos un array con las imágenes e iconos de nuestra página. */
   imagenes : IImagenes[] = [
-    {src : '../../../assets/images/despejado1.png', icono : '../../../assets/images/iconoSol.png'      },
-    {src : '../../../assets/images/despejado2.png', icono : '../../../assets/images/iconoSol.png'      },
-    {src : '../../../assets/images/lluvia1.png'   , icono : '../../../assets/images/iconoLluvia.png'   },
-    {src : '../../../assets/images/lluvia2.png'   , icono : '../../../assets/images/iconoLluvia.png'   },
-    {src : '../../../assets/images/niebla.png'    , icono : '../../../assets/images/iconoNubes.png'    },
-    {src : '../../../assets/images/nieve.png'     , icono : '../../../assets/images/iconoNieve.png'    },
-    {src : '../../../assets/images/nuboso.png'    , icono : '../../../assets/images/iconoSolNubes.png' },
-    {src : '../../../assets/images/muyNuboso.png' , icono : '../../../assets/images/iconoNubes.png'    },
+    {src : './assets/images/despejado1.png', icono : './assets/images/iconoSol.png'      },
+    {src : './assets/images/despejado2.png', icono : './assets/images/iconoSol.png'      },
+    {src : './assets/images/lluvia1.png'   , icono : './assets/images/iconoLluvia.png'   },
+    {src : './assets/images/lluvia2.png'   , icono : './assets/images/iconoLluvia.png'   },
+    {src : './assets/images/niebla.png'    , icono : './assets/images/iconoNubes.png'    },
+    {src : './assets/images/nieve.png'     , icono : './assets/images/iconoNieve.png'    },
+    {src : './assets/images/nuboso.png'    , icono : './assets/images/iconoSolNubes.png' },
+    {src : './assets/images/muyNuboso.png' , icono : './assets/images/iconoNubes.png'    },
   ]
   /* Creamos un array de objetos con la información esencial de los días próximos. */
   weatherProxDias : IWeatherProxDias[] = [

@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { IData, IMunicipios } from '../Interfaces/Interfaces.module';
@@ -12,6 +12,7 @@ export class WeatherService {
     private http : HttpClient
   ){}
 
+  
   getMunicipios() : Observable<IMunicipios[]>{
     return this.http.get<IMunicipios[]>('https://www.el-tiempo.net/api/json/v2/municipios')
   }
